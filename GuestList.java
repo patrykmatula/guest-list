@@ -8,6 +8,8 @@ public class GuestList {
         Scanner scanner = new Scanner(System.in);
 
         do {
+            System.out.println("----------------------------");
+            System.out.println("- Menu -");
             System.out.println();
             System.out.println("1 - Display All Guests");
             System.out.println("2 - Add Guest");
@@ -18,9 +20,13 @@ public class GuestList {
             System.out.println();
 
             if (option == 1) {
+                System.out.println("----------------------------");
+                System.out.println("- Guests -");
+                System.out.println();
                 for (int i = 0; i < guests.length; i++) {
                         System.out.println(guests[i] == null ? "--" : guests[i]);
                 }
+                System.out.println();
             }
             else if (option == 2) {
                 for (int i = 0; i < guests.length; i++) {
