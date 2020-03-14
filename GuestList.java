@@ -19,7 +19,12 @@ public class GuestList {
 
             if (option == 1) {
                 for (int i = 0; i < guests.length; i++) {
-                    System.out.println(guests[i]);
+                    if (guests[i] != null) {
+                        System.out.println(guests[i]);
+                    }
+                    else {
+                        System.out.println("--");
+                    }
                 }
             }
             else if (option == 2) {
