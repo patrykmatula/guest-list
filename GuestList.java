@@ -6,18 +6,7 @@ public class GuestList {
 
     public static void main(String[] args) {
 
-        guests[0] = "patryk";
-        guests[1] = "marta";
-        guests[2] = "tomek";
-        guests[3] = "piotr";
-        guests[4] = "kasia";
-        guests[5] = "monika";
-        guests[6] = "robert";
-        guests[7] = "magda";
-        guests[8] = "artur";
-        guests[9] = "paulina";
-
-
+        insertTestNames();
 
         do {
             displayGuests();
@@ -25,34 +14,10 @@ public class GuestList {
             int option = getOption();
 
             if (option == 1) {
-                for (int i = 0; i < guests.length; i++) {
-                    if (guests[i] == null) {
-                        System.out.print ("Name: ");
-                        String name = scanner.next();
-                        guests [i] = name;
-                        break;
-                    }
-                }
+                addGuest();
             }
             else if (option == 2) {
-                System.out.print("Name: ");
-                String name = scanner.next();
-                for (int i = 0; i < guests.length; i++) {
-                    if (guests[i] != null && guests[i].equals(name)) {
-                        guests[i] = null;
-
-                        break;
-                    }
-                }
-                String[] temp = new String [guests.length];
-                int ti = 0;
-                for (int i = 0; i < guests.length; i++) {
-                    if (guests[i] != null){
-                        temp[ti] = guests[i];
-                        ti++;
-                    }
-                }
-                guests = temp;
+                removeGuest();
             }
             else if (option == 3) {
                 break;
@@ -90,5 +55,43 @@ public class GuestList {
         int option = scanner.nextInt();
         System.out.println();
         return option;
+    }
+    static void addGuest(){
+        for (int i = 0; i < guests.length; i++) {
+            if (guests[i] == null) {
+                System.out.print ("Name: ");
+                String name = scanner.next();
+                guests [i] = name;
+                break;
+            }
+        }
+    }
+    static void removeGuest(){
+        System.out.print("Guest number: ");
+        int guestNumber = scanner.nextInt();
+        for (int i = 0; i < guests.length; i++) {
+            if (guests[i] != null && (i+1) == guestNumber) {
+                guests[i] = null;
+
+                break;
+            }
+        }
+        String[] temp = new String [guests.length];
+        int ti = 0;
+        for (int i = 0; i < guests.length; i++) {
+            if (guests[i] != null){
+                temp[ti] = guests[i];
+                ti++;
+            }
+        }
+        guests = temp;
+    }
+    static void insertTestNames(){
+        guests[0] = "patryk";
+        guests[1] = "marta";
+        guests[2] = "tomek";
+        guests[3] = "piotr";
+        guests[4] = "kasia";
+
     }
 }
