@@ -9,10 +9,7 @@ public class GuestList {
         do {
             displayGuests();
             displayMenu();
-            
-            System.out.print("Option:");
-            int option = scanner.nextInt();
-            System.out.println();
+            int option = getOption();
 
             if (option == 1) {
                 for (int i = 0; i < guests.length; i++) {
@@ -59,5 +56,12 @@ public class GuestList {
         System.out.println("2 - Remove Guest");
         System.out.println("3 - Exit");
 
+    }
+
+    static int getOption () {
+        System.out.print("Option:");
+        int option = scanner.nextInt();
+        System.out.println();
+        return option;
     }
 }
