@@ -6,6 +6,19 @@ public class GuestList {
 
     public static void main(String[] args) {
 
+        guests[0] = "patryk";
+        guests[1] = "marta";
+        guests[2] = "tomek";
+        guests[3] = "piotr";
+        guests[4] = "kasia";
+        guests[5] = "monika";
+        guests[6] = "robert";
+        guests[7] = "magda";
+        guests[8] = "artur";
+        guests[9] = "paulina";
+
+
+
         do {
             displayGuests();
             displayMenu();
@@ -27,9 +40,19 @@ public class GuestList {
                 for (int i = 0; i < guests.length; i++) {
                     if (guests[i] != null && guests[i].equals(name)) {
                         guests[i] = null;
+
                         break;
                     }
                 }
+                String[] temp = new String [guests.length];
+                int ti = 0;
+                for (int i = 0; i < guests.length; i++) {
+                    if (guests[i] != null){
+                        temp[ti] = guests[i];
+                        ti++;
+                    }
+                }
+                guests = temp;
             }
             else if (option == 3) {
                 break;
