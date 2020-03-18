@@ -14,7 +14,7 @@ public class GuestList {
             if (option == 1) {
                 for (int i = 0; i < guests.length; i++) {
                     if (guests[i] == null) {
-                        System.out. print ("Name: ");
+                        System.out.print ("Name: ");
                         String name = scanner.next();
                         guests [i] = name;
                         break;
@@ -44,6 +44,7 @@ public class GuestList {
         System.out.println("- Guests -");
         System.out.println();
         for (int i = 0; i < guests.length; i++) {
+            System.out.print(i+1 + ". ");
             System.out.println(guests[i] == null ? "--" : guests[i]);
         }
     }
