@@ -20,6 +20,9 @@ public class GuestList {
                 removeGuest();
             }
             else if (option == 3) {
+                renameGuest();
+            }
+            else if (option == 4) {
                 break;
             }
         } while (true);
@@ -46,13 +49,15 @@ public class GuestList {
         System.out.println();
         System.out.println("1 - Add Guest");
         System.out.println("2 - Remove Guest");
-        System.out.println("3 - Exit");
+        System.out.println("3 - Rename Guest");
+        System.out.println("4 - Exit");
 
     }
 
     static int getOption () {
         System.out.print("Option:");
         int option = scanner.nextInt();
+        scanner.nextLine();
         System.out.println();
         return option;
     }
@@ -60,8 +65,7 @@ public class GuestList {
         for (int i = 0; i < guests.length; i++) {
             if (guests[i] == null) {
                 System.out.print ("Name: ");
-                String name = scanner.next();
-                guests [i] = name;
+                guests [i] = scanner.nextLine();
                 break;
             }
         }
@@ -90,6 +94,20 @@ public class GuestList {
             }
         }
         guests = temp;
+    }
+    static void renameGuest(){
+        System.out.print("Guest number: ");
+        int guestNumber = scanner.nextInt();
+        scanner.nextLine();
+
+        if (guestNumber >= 1 && guestNumber <=10 && guests[guestNumber-1] != null) {
+            System.out.print("New name: ");
+            String newName = scanner.nextLine();
+            guests[guestNumber - 1] = newName;
+        }
+        else {
+            System.out.println("\nError: there is no guest with that number.");
+        }
     }
     static void insertTestNames(){
         guests[0] = "patryk";
