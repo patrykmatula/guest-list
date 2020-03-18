@@ -66,6 +66,9 @@ public class GuestList {
         System.out.println("----------------------------");
         System.out.println("- Guests -");
         System.out.println();
+        if (guests[0] == null){
+            System.out.println("Guest list is empty.");
+        }
         for (int i = 0; i < guests.length && guests[i] != null; i++) {
             System.out.print(i+1 + ". ");
             System.out.println(guests[i]);
